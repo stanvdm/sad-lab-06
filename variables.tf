@@ -15,4 +15,5 @@ variable "subnet_address_prefixes" {
 
 locals {
     selected_subnet_address_prefix = var.subnet_address_prefixes[terraform.workspace]
+    name_insert = "${terraform.workspace}-${lower(replace(var.location," ",""))}"
 }

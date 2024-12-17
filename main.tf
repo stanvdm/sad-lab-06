@@ -1,8 +1,8 @@
 terraform {
     required_providers {
         azurerm = {
-        source = "hashicorp/azurerm"
-        version = " =4.10.0"
+            source = "hashicorp/azurerm"
+            version = " =4.10.0"
         }
     }
 }
@@ -14,6 +14,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "vandamme-rg-01" {
-    name                    = "vandamme-rg-${terraform.workspace}-${lower(replace(var.location," ",""))}-01"
+    name                    = "vandamme-rg-${local.name_insert}-01"
     location                = var.location
 }
